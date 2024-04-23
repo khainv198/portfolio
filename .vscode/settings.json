@@ -1,0 +1,13 @@
+{
+  "protoc": {
+    "path": "/opt/homebrew/Cellar/protobuf/26.1/bin/protoc",
+    "compile_on_save": true,
+    "options": [
+      "--proto_path=${workspaceRoot}/proto",
+      "--plugin=${workspaceRoot}/server/node_modules/.bin/protoc-gen-ts_proto",
+      "--ts_proto_out=server/generated/protobuf",
+      "--ts_proto_opt=nestJs=true",
+      "--ts_proto_opt=fileSuffix=_pb"
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package khainv198.services.auth;
+
+import "shared/base.proto";
+
+service AuthService {
+  rpc Login(shared.Empty) returns (shared.Empty) {}
+}
