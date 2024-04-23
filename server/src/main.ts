@@ -1,7 +1,4 @@
 import { NestFactory } from '@nestjs/core';
-import { MicroserviceOptions, Transport } from '@nestjs/microservices';
-import { KHAINV198_SERVICES_AUTH_PACKAGE_NAME } from 'generated/protobuf/services/auth_service_pb';
-import { join } from 'path';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
@@ -22,19 +19,19 @@ async function bootstrap() {
   //   }),
   // );
 
-  app.connectMicroservice<MicroserviceOptions>({
-    transport: Transport.GRPC,
-    options: {
-      package: KHAINV198_SERVICES_AUTH_PACKAGE_NAME,
-      protoPath: join(__dirname, '../../../proto/services/auth_service.proto'),
-      url: 'localhost:9001',
-      loader: {
-        includeDirs: [join(__dirname, '../../../proto')],
-      },
-    },
-  });
+  // app.connectMicroservice<MicroserviceOptions>({
+  //   transport: Transport.GRPC,
+  //   options: {
+  //     package: KHAINV198_SERVICES_AUTH_PACKAGE_NAME,
+  //     protoPath: join(__dirname, '../../../proto/services/auth_service.proto'),
+  //     url: 'localhost:9001',
+  //     loader: {
+  //       includeDirs: [join(__dirname, '../../../proto')],
+  //     },
+  //   },
+  // });
 
-  await app.startAllMicroservices();
+  // await app.startAllMicroservices();
 
   await app.listen(3000);
 }
