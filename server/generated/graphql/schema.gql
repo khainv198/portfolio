@@ -1,0 +1,44 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreateTechnologyRequest {
+  image: String!
+  name: String!
+}
+
+input GetTechnologiesRequest {
+  limit: Int!
+  page: Int!
+}
+
+type GetTechnologiesResponse {
+  items: [Technology!]!
+  total: Int!
+}
+
+input GetTechnologyRequest {
+  id: Int!
+}
+
+type Mutation {
+  createTechnology(input: CreateTechnologyRequest!): Technology!
+  updateTechnology(input: UpdateTechnologyRequest!): Technology!
+}
+
+type Query {
+  getTechnologies(input: GetTechnologiesRequest!): GetTechnologiesResponse!
+  getTechnology(input: GetTechnologyRequest!): Technology!
+}
+
+type Technology {
+  id: Int!
+  image: String!
+  name: String!
+}
+
+input UpdateTechnologyRequest {
+  id: Int!
+  image: String
+  name: String
+}
