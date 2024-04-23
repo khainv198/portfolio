@@ -1,6 +1,5 @@
 import { NestFactory } from '@nestjs/core';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
-import * as compression from 'compression';
 import { KHAINV198_SERVICES_AUTH_PACKAGE_NAME } from 'generated/protobuf/services/auth_service_pb';
 import { join } from 'path';
 import { AppModule } from './app.module';
@@ -11,7 +10,7 @@ async function bootstrap() {
   app.enableCors();
   // app.use(helmet());
   // app.use(cookieParser());
-  app.use(compression({ level: 6 }));
+  // app.use(compression({ level: 6 }));
   // app.use(
   //   session({
   //     secret: 'my-secret',
